@@ -1,0 +1,17 @@
+<launch>
+
+	<node pkg="realsense_laserscan" type="rgb_align_depth.py"  name="rgb_align_depth" output="screen"/>
+
+  <node pkg="realsense_laserscan" type="odometry.py"  name="odometry" output="screen"/>
+
+  <node pkg="realsense_laserscan" type="sync.py"  name="sync" output="screen"/>
+
+	<node pkg="realsense_laserscan" type="crop.py"  name="crop" output="screen"/>
+
+	<node pkg="realsense_laserscan" type="frame.py"  name="tf_camera" output="screen"/>
+
+  <include file="$(find realsense_laserscan)/launch/depth_image_to_laser_scan.launch"/>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find realsense_laserscan)/rviz/config.rviz"/>
+
+</launch>
