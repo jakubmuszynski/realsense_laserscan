@@ -6,6 +6,15 @@ This repository creates laserscan from D435 depth map on a set height using T265
 Pitch angle is used to choose which part of the image is passed on to depthimage_to_laserscan algorithm. 
 If pitch angle is too big, empty depth map is sent, resulting in no laserscan data output.
 
+## Usage:
+```
+roslaunch realsense_laserscan realsense_laserscan.launch
+```
+with RViz:
+```
+roslaunch realsense_laserscan realsense_laserscan_rviz.launch
+```
+
 ## Used repositories:
 - [realsense_nodes_python](https://github.com/Michal-Bidzinski/realsense_nodes_python)
 - [depthimage_to_laserscan](https://github.com/ros-perception/depthimage_to_laserscan)
